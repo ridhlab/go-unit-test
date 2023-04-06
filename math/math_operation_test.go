@@ -5,14 +5,14 @@ import "testing"
 func TestSum(t *testing.T) {
 	res := Sum(1, 2)
 	if res != 3 {
-		panic("Test is not valid")
+		t.Error("res must be 3")
 	}
 }
 
 func TestSubstraction(t *testing.T) {
 	res := Substraction(1, 2)
 	if res != -1 {
-		panic("Test is not valid")
+		t.Error("res mus be -1")
 	}
 }
 
