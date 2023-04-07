@@ -14,6 +14,19 @@ func TestMain(m *testing.M) {
 	fmt.Println("Test finished")
 }
 
+func BenchmarkSum(b *testing.B) {
+	b.Run("Sum10And10", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			Sum(10, 10)
+		}
+	})
+	b.Run("Sum10And5", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			Sum(10, 5)
+		}
+	})
+}
+
 func TestSum(t *testing.T) {
 	t.Run("Equal", func(t *testing.T) {
 		assert.Equal(t, 4, Sum(2, 2), "Sum result must be equal")
